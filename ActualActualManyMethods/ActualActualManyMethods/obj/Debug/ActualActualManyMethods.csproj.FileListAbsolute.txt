@@ -1,0 +1,7 @@
+C:\Users\osama\DevFolderCsharp\ActualActualManyMethods\ActualActualManyMethods\bin\Debug\ActualActualManyMethods.exe.config
+C:\Users\osama\DevFolderCsharp\ActualActualManyMethods\ActualActualManyMethods\bin\Debug\ActualActualManyMethods.exe
+C:\Users\osama\DevFolderCsharp\ActualActualManyMethods\ActualActualManyMethods\bin\Debug\ActualActualManyMethods.pdb
+C:\Users\osama\DevFolderCsharp\ActualActualManyMethods\ActualActualManyMethods\obj\Debug\ActualActualManyMethods.csprojAssemblyReference.cache
+C:\Users\osama\DevFolderCsharp\ActualActualManyMethods\ActualActualManyMethods\obj\Debug\ActualActualManyMethods.csproj.CoreCompileInputs.cache
+C:\Users\osama\DevFolderCsharp\ActualActualManyMethods\ActualActualManyMethods\obj\Debug\ActualActualManyMethods.exe
+C:\Users\osama\DevFolderCsharp\ActualActualManyMethods\ActualActualManyMethods\obj\Debug\ActualActualManyMethods.pdb

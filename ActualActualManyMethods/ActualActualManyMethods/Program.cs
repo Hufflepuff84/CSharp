@@ -10,8 +10,16 @@ namespace Manymethods
     {
         public static void Main(string[] args)
         {
+            hello();
+            addition();
+            catDog();
+            oddEvent();
+            inches();
+            echo();
+            KillGrams();
+            date();
+            age();
             guess();
-
             Console.ReadKey();
         }
         public static void hello()
@@ -48,7 +56,6 @@ namespace Manymethods
             {
                 Console.WriteLine("You did not enter cats or dogs");
             }
-            
         }
         public static void oddEvent()
         {
@@ -63,10 +70,7 @@ namespace Manymethods
             {
                 Console.WriteLine("Your number is odd");
             }
-
-
-
-    }
+        }
         static void inches()
         {
             int feet;
@@ -81,7 +85,7 @@ namespace Manymethods
         static void echo()
         {
             Console.WriteLine("Whoa! Do you hear that echo??");
-            string echo=Console.ReadLine();
+            string echo = Console.ReadLine();
             Console.WriteLine(echo.ToUpper());
             Console.WriteLine(echo.ToLower());
             Console.WriteLine(echo.ToLower());
@@ -95,7 +99,7 @@ namespace Manymethods
             Console.WriteLine("Hi there, please enter your weight in pounds");
             pounds = Convert.ToInt32(Console.ReadLine());
             kilograms = (int)(0.45359237 * (Double)pounds);
-            Console.WriteLine("Your weight in kilograms is "+ kilograms);
+            Console.WriteLine("Your weight in kilograms is " + kilograms);
         }
         static void date()
         {
@@ -111,7 +115,7 @@ namespace Manymethods
             age = DateTime.Today.Year - birthyear;
             Console.WriteLine("Your age is " + age);
 
-            
+
         }
         static void guess()
         {
@@ -123,11 +127,6 @@ namespace Manymethods
                 Console.WriteLine("CORRECT!");
             }
             else Console.WriteLine("WRONG!");
-
-            
         }
-
-
-
     }
 }
