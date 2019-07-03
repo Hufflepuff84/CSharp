@@ -30,7 +30,7 @@ namespace rockpaperscissors
             Console.WriteLine("Please choose rock, paper or scissors");
             string userChoice = Console.ReadLine();
             Random r = new Random();
-            int computerChoice = r.Next(4);
+            int computerChoice = r.Next(1,4);
             if (computerChoice == 1)
             {
                 if (userChoice == "rock")
