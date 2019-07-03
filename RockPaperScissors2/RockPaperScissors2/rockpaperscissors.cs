@@ -53,9 +53,8 @@ namespace rockpaperscissors
                 }
             }
                 else if (computerChoice == 2)
-
-
             {
+
                 if (userChoice == "rock")
                 {
                     Console.WriteLine("Sorry you lose, The computer chose paper which beats rock press enter ");
