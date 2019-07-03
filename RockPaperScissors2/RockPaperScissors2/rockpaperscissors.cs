@@ -36,12 +36,10 @@ namespace rockpaperscissors
                 if (userChoice == "rock")
                 {
                     Console.WriteLine("The computer chose rock It is a tie! please press enter ");
-
                 }
                 else if (userChoice == "paper")
                 {
                     Console.WriteLine("The computer chose paper, it's a tie! press enter to continue");
-
                 }
                 else if (userChoice == "scissors")
                 {
@@ -52,14 +50,11 @@ namespace rockpaperscissors
                     Console.WriteLine("You have choose rock, paper or scissors! press enter");
                 }
             }
-                else if (computerChoice == 2)
+            else if (computerChoice == 2)
             {
-
                 if (userChoice == "rock")
                 {
                     Console.WriteLine("Sorry you lose, The computer chose paper which beats rock press enter ");
-
-
                 }
                 else if (userChoice == "paper")
                 {
@@ -85,9 +80,7 @@ namespace rockpaperscissors
                 }
                 else if (userChoice == "paper")
                 {
-                    
                     Console.WriteLine("You win, The computer chose rock which loses to paper, press enter");
-
                 }
                 else if (userChoice == "scissors")
                 {
@@ -96,11 +89,8 @@ namespace rockpaperscissors
                 else
                 {
                     Console.WriteLine("You must choose rock, paper or scissors! press enter");
-
                 }
-
             }
-
             Console.ReadLine();
         }
     }
