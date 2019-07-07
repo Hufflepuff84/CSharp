@@ -19,7 +19,7 @@ namespace TicTacToe
             while (gameRunning)
             {
                 printboard();
-                Console.WriteLine("Enter your column row");
+                Console.WriteLine("Enter your column row...one number space other number...");
                 string input = Console.ReadLine();
                 string[] vals = input.Split(' ');
                 move(Convert.ToInt32(vals[0]), Convert.ToInt32(vals[1]));
