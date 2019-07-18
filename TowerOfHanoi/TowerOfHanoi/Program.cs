@@ -12,16 +12,13 @@ namespace TowerofHanoi
     {
         public static void Main(string[] args)
         {
-            
-
-            Stack<int> a = new Stack<int>();
-            a.Push(4);
-            a.Push(3);
-            a.Push(2);
-            a.Push(1);
-            Stack<int> b = new Stack<int>();
-            Stack<int> c = new Stack<int>();
-
+            Stack<int> x = new Stack<int>();
+            x.Push(4);
+            x.Push(3);
+            x.Push(2);
+            x.Push(1);
+            Stack<int> y = new Stack<int>();
+            Stack<int> z = new Stack<int>();
             string from;
             string to;
 
@@ -31,30 +28,29 @@ namespace TowerofHanoi
 
             while (play == false)
             {
-                Console.Clear();
 
-                printGame(a, b, c);
+                
+                printgame(x.ToArray(), y.ToArray(), z.ToArray());
+                
 
-                Console.WriteLine("Pick a cone: A, B, or C to move from.");
+                Console.WriteLine("Hi! Welcome to Tower of Hanoi! Pick a disk represented by a number on a rod: X, Y, or Z to move from. The right most number on the rod will be moved, and a larger number cannot be moved to the right of a smaller number.");
                 from = Console.ReadLine().ToLower();
                 Console.WriteLine();
-                Console.WriteLine("Pick a cone: A, B, or C to move to.");
+                Console.WriteLine("Pick a disk represented by a number from a rod: X, Y, or Z to move to. The right most number on the rod will be moved, and a larger number cannot be moved to the right of a smaller number.");
                 to = Console.ReadLine().ToLower();
-
-                Console.WriteLine();
                 Console.WriteLine();
 
-                if (from == "a")
+                if (from == "x")
                 {
-                    if (a.Count == 0)
+                    if (x.Count == 0)
                     {
                         continue;
                     }
-                    else if (to == "b")
+                    else if (to == "y")
                     {
-                        if (b.Count == 0 || b.Peek() > a.Peek())
+                        if (y.Count == 0 || y.Peek() > x.Peek())
                         {
-                            b.Push(a.Pop());
+                            y.Push(x.Pop());
                         }
                         else
                         {
@@ -65,11 +61,12 @@ namespace TowerofHanoi
                             continue;
                         }
                     }
-                    else if (to == "c")
+                    else if (to == "z")
                     {
-                        if (c.Count == 0 || c.Peek() > a.Peek())
+                        if (z.Count == 0 || z.Peek() > x.Peek())
                         {
-                            c.Push(a.Pop());
+                            z.Push(x.Pop());
+                            
                         }
                         else
                         {
@@ -89,17 +86,17 @@ namespace TowerofHanoi
                         continue;
                     }
                 }
-                else if (from == "b")
+                else if (from == "y")
                 {
-                    if (b.Count == 0)
+                    if (y.Count == 0)
                     {
                         continue;
                     }
-                    else if (to == "a")
+                    else if (to == "x")
                     {
-                        if (a.Count == 0 || a.Peek() > b.Peek())
+                        if (x.Count == 0 || x.Peek() > y.Peek())
                         {
-                            a.Push(b.Pop());
+                            x.Push(y.Pop());
                         }
                         else
                         {
@@ -110,11 +107,11 @@ namespace TowerofHanoi
                             continue;
                         }
                     }
-                    else if (to == "c")
+                    else if (to == "z")
                     {
-                        if (c.Count == 0 || c.Peek() > b.Peek())
+                        if (z.Count == 0 || z.Peek() > y.Peek())
                         {
-                            c.Push(b.Pop());
+                            z.Push(y.Pop());
                         }
                         else
                         {
@@ -133,17 +130,17 @@ namespace TowerofHanoi
                         continue;
                     }
                 }
-                else if (from == "c")
+                else if (from == "z")
                 {
-                    if (c.Count == 0)
+                    if (z.Count == 0)
                     {
                         continue;
                     }
-                    else if (to == "a")
+                    else if (to == "x")
                     {
-                        if (a.Count == 0 || a.Peek() > c.Peek())
+                        if (x.Count == 0 || x.Peek() > z.Peek())
                         {
-                            a.Push(c.Pop());
+                            x.Push(z.Pop());
                         }
                         else
                         {
@@ -154,11 +151,11 @@ namespace TowerofHanoi
                             continue;
                         }
                     }
-                    else if (to == "b")
+                    else if (to == "y")
                     {
-                        if (b.Count == 0 || b.Peek() > c.Peek())
+                        if (y.Count == 0 || y.Peek() > z.Peek())
                         {
-                            b.Push(c.Pop());
+                            y.Push(z.Pop());
                         }
                         else
                         {
@@ -184,62 +181,38 @@ namespace TowerofHanoi
                     Console.ReadKey();
                     continue;
                 }
-
-                // test for win
-                int[] test1 = b.ToArray();
-                if (test1.SequenceEqual(win))
+                if (z.Count == 4)
                 {
-                    Console.WriteLine("WIN! Tower moved from A to C !!");
-                    play = true;
-                    break;
-                }
-
-                int[] test2 = c.ToArray();
-                if (test2.SequenceEqual(win))
-                {
-                    Console.WriteLine("WIN! Tower moved from A to C !!");
+                    Console.WriteLine("You Win!");
                     play = true;
                     break;
                 }
 
             }
-
             Console.WriteLine("");
-
             Console.ReadKey();
         }
 
-        public static void printGame(Stack<int> a, Stack<int> b, Stack<int> c)
+        public static void printgame(int[] x, int[] y, int[] z)
         {
-            Console.Write("A  ");
-            PrintStack(a);
-            Console.WriteLine();
-            Console.WriteLine();
-
-            Console.Write("B  ");
-            PrintStack(b);
-            Console.WriteLine();
-            Console.WriteLine();
-
-            Console.Write("C  ");
-            PrintStack(c);
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-        }
-
-        public static void PrintStack(Stack<int> a)
-        {
-            if (a.Count == 0)
-                return;
-            else
+            Console.Write("X: ");
+            for (int i = x.Length - 1; i >= 0; i--)
             {
-                int x = a.Peek();
-                a.Pop();
-                PrintStack(a);
-                Console.Write(x + " ");
-                a.Push(x);
+                Console.Write(x[i] + " ");
             }
+            Console.WriteLine();
+            Console.Write("Y: ");
+            for (int i = y.Length - 1; i >= 0; i--)
+            {
+                Console.Write(y[i] + " ");
+            }
+            Console.WriteLine();
+            Console.Write("Z: ");
+            for (int i = z.Length - 1; i >= 0; i--)
+            {
+                Console.Write(z[i] + " ");
+            }
+            Console.WriteLine();
         }
     }
 }
