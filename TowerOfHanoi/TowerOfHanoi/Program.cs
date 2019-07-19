@@ -10,7 +10,7 @@ namespace TowerofHanoi
 {
     class Program
     {
-        public static void Main(string[] args)
+        public static void Main(string[] args) // stacks are used to push and pop disks from rod to rod
         {
             Stack<int> x = new Stack<int>();
             x.Push(4);
@@ -22,7 +22,7 @@ namespace TowerofHanoi
             string from;
             string to;
 
-            int[] win = new int[] { 1, 2, 3, 4 };
+            int[] win = new int[] { 1, 2, 3, 4 }; // this is the condition for the winning array
 
             bool play = false;
 
@@ -40,6 +40,7 @@ namespace TowerofHanoi
                 to = Console.ReadLine().ToLower();
                 Console.WriteLine();
 
+                // Peek is used to compare the disk size from one stack to another, to determine if the move is valid. 
                 if (from == "x")
                 {
                     if (x.Count == 0)
@@ -183,7 +184,7 @@ namespace TowerofHanoi
                 }
                 if (z.Count == 4)
                 {
-                    Console.WriteLine("You Win!");
+                    Console.WriteLine("Congratulations! You Win!"); // this determines if the user has won the game. 
                     play = true;
                     break;
                 }
@@ -193,7 +194,7 @@ namespace TowerofHanoi
             Console.ReadKey();
         }
 
-        public static void printgame(int[] x, int[] y, int[] z)
+        public static void printgame(int[] x, int[] y, int[] z) // this program prints the status of which disks are on which rods as the user plays the game
         {
             Console.Write("X: ");
             for (int i = x.Length - 1; i >= 0; i--)
