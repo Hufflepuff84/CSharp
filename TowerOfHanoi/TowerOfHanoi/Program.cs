@@ -54,7 +54,7 @@ namespace TowerofHanoi
                         }
                         else
                         {
-                            Console.WriteLine("Incorrect Input!");
+                            Console.WriteLine("You have entered incorrect input!");
                             Console.WriteLine("Press any key to continue.");
                             Console.WriteLine();
                             Console.ReadKey();
@@ -70,7 +70,7 @@ namespace TowerofHanoi
                         }
                         else
                         {
-                            Console.WriteLine("Incorrect Input!");
+                            Console.WriteLine("You have entered incorrect input!");
                             Console.WriteLine("Press any key to continue.");
                             Console.WriteLine();
                             Console.ReadKey();
@@ -79,7 +79,7 @@ namespace TowerofHanoi
                     }
                     else
                     {
-                        Console.WriteLine("Incorrect Input!");
+                        Console.WriteLine("You have entered incorrect input!");
                         Console.WriteLine("Press any key to continue.");
                         Console.WriteLine();
                         Console.ReadKey();
@@ -100,7 +100,7 @@ namespace TowerofHanoi
                         }
                         else
                         {
-                            Console.WriteLine("Incorrect Input!");
+                            Console.WriteLine("You have entered incorrect input!");
                             Console.WriteLine("Press any key to continue.");
                             Console.WriteLine();
                             Console.ReadKey();
@@ -115,7 +115,7 @@ namespace TowerofHanoi
                         }
                         else
                         {
-                            Console.WriteLine("Incorrect Input!");
+                            Console.WriteLine("You have entered incorrect input!");
                             Console.WriteLine("Press any key to continue.");
                             Console.WriteLine();
                             Console.ReadKey();
@@ -124,7 +124,7 @@ namespace TowerofHanoi
                     }
                     else
                     {
-                        Console.WriteLine("Incorrect Input!");
+                        Console.WriteLine("You have entered incorrect input!");
                         Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
                         continue;
@@ -144,7 +144,7 @@ namespace TowerofHanoi
                         }
                         else
                         {
-                            Console.WriteLine("Incorrect Input!");
+                            Console.WriteLine("You have entered incorrect input!");
                             Console.WriteLine("Press any key to continue.");
                             Console.WriteLine();
                             Console.ReadKey();
@@ -159,7 +159,7 @@ namespace TowerofHanoi
                         }
                         else
                         {
-                            Console.WriteLine("Incorrect Input!");
+                            Console.WriteLine("You have entered incorrect input!");
                             Console.WriteLine("Press any key to continue.");
                             Console.WriteLine();
                             Console.ReadKey();
@@ -168,7 +168,7 @@ namespace TowerofHanoi
                     }
                     else
                     {
-                        Console.WriteLine("Incorrect Input!");
+                        Console.WriteLine("You have entered incorrect input!");
                         Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
                         continue;
@@ -176,7 +176,7 @@ namespace TowerofHanoi
                 }
                 else
                 {
-                    Console.WriteLine("Incorrect Input!");
+                    Console.WriteLine("You have entered incorrect input!");
                     Console.WriteLine("Press any key to continue.");
                     Console.ReadKey();
                     continue;
