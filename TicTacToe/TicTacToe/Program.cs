@@ -14,23 +14,23 @@ namespace TicTacToe
         static string winner;
         static void Main(string[] args)
         {
-            initializeboard();
+            InitializeBoard();
 
             while (gameRunning)
             {
-                printboard();
+                PrintBoard();
                 Console.WriteLine("Enter your column row...one number space other number...");
                 string input = Console.ReadLine();
                 string[] vals = input.Split(' ');
-                move(Convert.ToInt32(vals[0]), Convert.ToInt32(vals[1]));
-                isgameover();
+                Move(Convert.ToInt32(vals[0]), Convert.ToInt32(vals[1]));
+                IsGameOver();
             }
-            printboard();
+            PrintBoard();
             Console.WriteLine("Winner is " + winner);
             
             Console.ReadLine();
         }
-        static void initializeboard()
+        static void InitializeBoard()
         {
             for (int i = 0; i<3; i++)
             {
@@ -40,7 +40,7 @@ namespace TicTacToe
                 }
             }
         }
-        static void printboard()
+        static void PrintBoard()
         {
             for (int i = 0; i < 3; i++)
             {
@@ -52,7 +52,7 @@ namespace TicTacToe
             }
 
         }
-        static void move(int row, int col)
+        static void Move(int row, int col)
         {
             if (board[col, row] == " ")
             {
@@ -68,7 +68,7 @@ namespace TicTacToe
                 xturn = !xturn;
             }
         }
-        static void isgameover()
+        static void IsGameOver()
         {
             int count;
             //check rows
