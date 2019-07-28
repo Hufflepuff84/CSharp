@@ -69,7 +69,7 @@ namespace ToDoItems
                     catch
                     {
                         first.Priority = 1;
-                        Console.WriteLine("Priority has been set to high ");
+                        Console.WriteLine("Your priority has been set to high ");
                     }
                 }
 
