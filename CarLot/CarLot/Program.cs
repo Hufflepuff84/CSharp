@@ -76,7 +76,7 @@ namespace CarLot
             Price = price;
         }
 
-        public abstract void PrintDetails(); // no initialization
+        public abstract void PrintDetails(); 
     }
 
     class Truck : Vehicle
