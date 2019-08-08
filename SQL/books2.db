@@ -1,0 +1,16 @@
+CREATE TABLE Books (
+id int,
+title varchar(20),
+author varchar(20)
+);
+--INSERT INTO Books (id, title, author) VALUES 
+--(1, 'Romeo and Juliet', 'William Shakespeare');
+--INSERT INTO Books (id, title, author) VALUES
+--(2, 'The Jungle', 'Upton Sinclair');
+--INSERT INTO Books (id, title, author) VALUES
+--(3, 'Frankenstein', 'Mary Shelly');
+--INSERT INTO Books (id, title, author) VALUES
+--(4, 'Crime and Punishment', 'Fyodor Dostoyevsky');
+--SELECT * from Books 
+
+
