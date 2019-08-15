@@ -1,1 +1,57 @@
-SELECT * FROM Books
+CREATE TABLE Books (
+    id     INT,
+    title  VARCHAR (20),
+    author VARCHAR (20) 
+);
+
+INSERT INTO Books (
+                      id,
+                      title,
+                      author
+                  )
+                  VALUES (
+                      1,
+                      'Romeo and Juliet',
+                      'William Shakespeare'
+                  );
+
+INSERT INTO Books (
+                      id,
+                      title,
+                      author
+                  )
+                  VALUES (
+                      2,
+                      'The Jungle',
+                      'Upton Sinclair'
+                  );
+
+INSERT INTO Books (
+                      id,
+                      title,
+                      author
+                  )
+                  VALUES (
+                      3,
+                      'Frankenstein',
+                      'Mary Shelly'
+                  );
+
+SELECT *
+  FROM Books;
+
+SELECT *
+  FROM Books
+ WHERE id = 1;
+
+SELECT title
+  FROM Books;
+
+UPDATE Books
+   SET author = "huh"
+ WHERE id = 1;
+
+DELETE FROM Books
+      WHERE id = 3;
+
+;
