@@ -16,6 +16,7 @@ namespace Checkpoint2_TodoApp
         public void Add (ToDo Item)
         {
             context.Add(Item);
+            context.SaveChanges();
         }
         public void Delete(int ID)
         {

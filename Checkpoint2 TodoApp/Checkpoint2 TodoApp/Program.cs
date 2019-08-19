@@ -12,7 +12,8 @@ namespace Checkpoint2_TodoApp
     {
         static void Main(string[] args)
         {
-            
+            ConsoleUtils app = new ConsoleUtils();
+            app.Start();
 
             
 

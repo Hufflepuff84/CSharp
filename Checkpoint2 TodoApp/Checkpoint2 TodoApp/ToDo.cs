@@ -16,6 +16,15 @@ namespace Checkpoint2_TodoApp
             this.Description = Desc;
             this.DueDate = Due;
         }
+        public ToDo()
+        {
+
+        }
+
+        public override string ToString()
+        {
+            return $"{Id} | {Description} | {DueDate}";
+        }
 
     }
 
