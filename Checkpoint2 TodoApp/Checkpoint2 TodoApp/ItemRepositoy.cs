@@ -15,6 +15,7 @@ namespace Checkpoint2_TodoApp
         }
         public void Add (ToDo Item)
         {
+            context.Database.EnsureCreated();
             context.Add(Item);
             context.SaveChanges();
         }
@@ -27,7 +28,7 @@ namespace Checkpoint2_TodoApp
         public void MarkAsDone(int ID)
         {
             ToDo Item = Get(ID);
-            Item.DueDate = "Done";
+            Item.Status = "Done";
             context.Update(Item);
             context.SaveChanges();
         }
@@ -37,16 +38,17 @@ namespace Checkpoint2_TodoApp
         }
         public IEnumerable<ToDo> GetDone()
         {
-            return context.ToDos.Where(x => x.DueDate == "Done").ToList();
+            return context.ToDos.Where(x => x.Status == "Done").ToList();
         }
-        public IEnumerable<ToDo> GetUnfinnished()
+        public IEnumerable<ToDo> GetPending()
         {
-            return context.ToDos.Where(x => x.DueDate != "Done").ToList();
+            return context.ToDos.Where(x => x.Status == "Pending").ToList();
         }
         public ToDo Get(int Id)
         {
-            return context.ToDos.Where(x => x.DueDate != "Done").FirstOrDefault();
+            return context.ToDos.FirstOrDefault(x => x.Id == Id);
         }
+        
 
     }
 }

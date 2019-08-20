@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,13 +9,13 @@ namespace Checkpoint2_TodoApp
 {
     public class ToDo
     {
-        public string Description;
-        public string DueDate;
-        public int Id;
+        public string Item { get; set; }
+        public string Status { get; set; }
+        public int Id { get; set; }
         public ToDo(string Desc, string Due)
         {
-            this.Description = Desc;
-            this.DueDate = Due;
+            this.Item = Desc;
+            this.Status = Due;
         }
         public ToDo()
         {
@@ -23,7 +24,7 @@ namespace Checkpoint2_TodoApp
 
         public override string ToString()
         {
-            return $"{Id} | {Description} | {DueDate}";
+            return $"{Id} | {Item} | {Status}";
         }
 
     }

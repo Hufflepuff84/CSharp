@@ -31,8 +31,27 @@ namespace Checkpoint2_TodoApp
 
                 if (choice.Equals("1"))
                 {
-                    IEnumerable<ToDo> todos = app.GetAll();
-                    foreach(ToDo item in todos)
+                    IEnumerable<ToDo> Todos = app.GetAll();
+                    var foo = Todos.ToList();
+                    foreach(ToDo item in Todos)
+                    {
+                        Console.WriteLine(item);
+                    }
+                }
+                else if (choice.Equals("2"))
+                {
+                    IEnumerable<ToDo> Todos = app.GetDone();
+                    var foo = Todos.ToList();
+                    foreach (ToDo item in Todos)
+                    {
+                        Console.WriteLine(item);
+                    }
+                }
+                else if (choice.Equals("3"))
+                {
+                    IEnumerable<ToDo> Todos = app.GetPending();
+                    var foo = Todos.ToList();
+                    foreach (ToDo item in Todos)
                     {
                         Console.WriteLine(item);
                     }
@@ -41,10 +60,29 @@ namespace Checkpoint2_TodoApp
                 {
                     Console.WriteLine("What is the description?");
                     string description = Console.ReadLine();
-                    Console.WriteLine("When is the due date?");
+                    Console.WriteLine("When is the Status?");
                     string Due = Console.ReadLine();
                     app.Add(description, Due);
+
                     Console.WriteLine("Item Added!");
+                }
+                else if (choice.Equals("5"))
+                {
+                    Console.WriteLine("What is the Id of the item you want marked as done?");
+                    string what = Console.ReadLine();
+                    int Id = int.Parse(what); // you can try using tryparse and it returns a boolean
+                    app.MarkAsDone(Id);
+                }
+                else if (choice.Equals("6"))
+                {
+                    Console.WriteLine("Which to do Items do you wish to be deleted?");
+                    string retort = Console.ReadLine();
+                    int Id = int.Parse(retort);
+                    app.Delete(Id);
+                }
+                else
+                {
+                    Console.WriteLine("Sorry that was invalid input, try again!");
                 }
 
 

@@ -17,6 +17,7 @@ namespace Checkpoint2_TodoApp
         {
             ToDo ToAdd = new ToDo(Description, DueDate);
             Repo.Add(ToAdd);
+            
         }
         public void MarkAsDone(int ID)
         {
@@ -36,8 +37,12 @@ namespace Checkpoint2_TodoApp
         }
         public IEnumerable<ToDo> GetPending()
         {
-            return Repo.GetUnfinnished();
+            return Repo.GetPending();
         }
+        public ToDo GetById(int Id)
+        {
+            return Repo.Get(Id);
+        } 
     }
 
 }

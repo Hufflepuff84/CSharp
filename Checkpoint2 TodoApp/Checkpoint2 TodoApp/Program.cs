@@ -13,6 +13,10 @@ namespace Checkpoint2_TodoApp
         static void Main(string[] args)
         {
             ConsoleUtils app = new ConsoleUtils();
+            ItemContext context = new ItemContext();
+            // makes sure that the table exists, 
+            //and creates it if it does not already exist
+            context.Database.EnsureCreated();
             app.Start();
 
             
