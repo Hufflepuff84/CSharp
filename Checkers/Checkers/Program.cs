@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace Checkers
 {
-    public enum Color { White, Black }
+    public enum Color { Red, Black }
 
     class Program
     {

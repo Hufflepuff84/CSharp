@@ -3,26 +3,73 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft;
+using System.IO;
 
-namespace BooksInventory
+namespace BookInventory
 {
-    public class Book
-    {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Author { get; set; }
-    }
-    public class BookContext: Books
+    class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please enter the title and the author of the book you wish you add to the data base");
-            string input = Console.ReadLine();
+            BooksContext context = new BooksContext();
+            
+
+            Console.WriteLine("Enter the title of the book you wish you add followed by a (comma) and then type the book's author's full name");
+            String fullName = Console.ReadLine();
+
+            String[] parts = fullName.Split(',');
+            if (parts.Length == 2)
+            {
+                Book newStudent = new Book(
+                    parts[0], parts[1]);
+
+                
+
+
+                Console.WriteLine("Added the book.");
+            }
+            else
+            {
+                Console.WriteLine("Incorrect input," +
+                    " no book was added");
+            }
+
+            Console.WriteLine("Here is a list of your books: ");
+
+            
+
+
+            Console.ReadLine();
+        }
+        public class Books
+        {
 
         }
     }
-    public class books
-    {
 
+    internal class BooksContext
+    {
+        internal object Database;
+        internal object Books;
+        internal object GetEnumerator;
+
+        public BooksContext()
+        {
+        }
+    }
+
+    class Book
+    {
+        public int Id { get; private set; }
+        public String Title { get; set; }
+        public String Author { get; set; }
+        public Book(String Title, String Author)
+        {
+            this.Title = Title;
+            this.Author = Author;
+        }
     }
 }
+
+    
