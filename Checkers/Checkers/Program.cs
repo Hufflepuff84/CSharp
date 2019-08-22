@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace Checkers
 {
-    public enum Color { Red, Black }
+    public enum Color { White, Black }
 
     class Program
     {
@@ -16,19 +16,18 @@ namespace Checkers
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Game Game = new Game();
             Game.Start();
-            Console.WriteLine();
-            Console.ReadKey();
+            Console.ReadLine();
         }
     }
 
     public struct Position
     {
         public int Row { get; private set; }
-        public int Col { get; private set; }
+        public int Collumn { get; private set; }
         public Position(int row, int col)
         {
             Row = row;
-            Col = col;
+            Collumn = col;
         }
     }
 
@@ -44,12 +43,12 @@ namespace Checkers
             if (team == Color.Black)
             {
                 Symbol = char.ConvertFromUtf32(int.Parse("25CB", System.Globalization.NumberStyles.HexNumber));
-                // Team = team;
+                
             }
             else
             {
                 Symbol = char.ConvertFromUtf32(int.Parse("25CF", System.Globalization.NumberStyles.HexNumber));
-                // Team = team;
+                
             }
             Position = new Position(row, col);
         }
@@ -62,17 +61,17 @@ namespace Checkers
         public Board()
         {
             Checkers = new List<Checker>();
-            for (int r = 0; r < 3; r++)
+            for (int a = 0; a < 3; a++)
             {
                 for (int i = 0; i < 8; i += 2)
                 {
-                    Checker c = new Checker(Color.White, r, (r + 1) % 2 + i);
-                    Checkers.Add(c);
+                    Checker b = new Checker(Color.White, a, (a + 1) % 2 + i);
+                    Checkers.Add(b);
                 }
                 for (int i = 0; i < 8; i += 2)
                 {
-                    Checker c = new Checker(Color.Black, (r + 5), r % 2 + i);
-                    Checkers.Add(c);
+                    Checker b = new Checker(Color.Black, (a + 5), a % 2 + i);
+                    Checkers.Add(b);
                 }
             }
         }
@@ -80,11 +79,11 @@ namespace Checkers
         public Checker GetChecker(Position pos)
         {
             Checker found = null;
-            foreach (Checker c in Checkers)
+            foreach (Checker b in Checkers)
             {
-                if (pos.Equals(c.Position))
+                if (pos.Equals(b.Position))
                 {
-                    found = c;
+                    found = b;
                     break;
                 }
             }
@@ -121,14 +120,6 @@ namespace Checkers
         {
             return (board.Checkers.All(x => x.Team == Color.White) ||
                 board.Checkers.All(x => x.Team == Color.Black));
-
-            /* foreach(var x in Checkers) 
-             * {
-             *      if(x.Team == Color.White || x.Team == Color.Black)
-             *          {
-             *              return true;   
-             *          }
-             * } */
         }
 
 
@@ -138,8 +129,7 @@ namespace Checkers
             {
                 Console.Clear();
                 DrawBoard();
-                Console.WriteLine($"Enter {Turn} Move in the following" +
-                    $" format.");
+                Console.WriteLine($"Enter your move");
                 Console.WriteLine("Start Column, Start Row, Destination" +
                     " Column, Destination Row");
                 string Move = Console.ReadLine();
@@ -154,12 +144,8 @@ namespace Checkers
                     board.MoveChecker(checker, dest);
                     var result = Turn == Color.Black ? Turn = Color.White : Turn = Color.Black;
                 }
-
-                Console.ReadLine();
-
-                // ProcessInput();
             }
-            Console.ReadLine();
+            
         }
 
         public bool IsLegalMove(Checker checker, Position src, Position dest)
@@ -173,37 +159,34 @@ namespace Checkers
                 return false;
             }
 
-            int r = dest.Row;
-            int c = dest.Col;
-            // if (you suck)
-
-
+            int a = dest.Row;
+            int b = dest.Collumn;
             return true;
         }
 
         public void DrawBoard()
         {
             string[][] grid = new string[8][];
-            for (int r = 0; r < 8; r++)
+            for (int a = 0; a < 8; a++)
             {
-                grid[r] = new string[8];
-                for (int c = 0; c < 8; c++)
+                grid[a] = new string[8];
+                for (int b = 0; b < 8; b++)
                 {
-                    grid[r][c] = " ";
+                    grid[a][b] = " ";
                 }
             }
-            foreach (Checker c in board.Checkers)
+            foreach (Checker b in board.Checkers)
             {
-                grid[c.Position.Row][c.Position.Col] = c.Symbol;
+                grid[b.Position.Row][b.Position.Collumn] = b.Symbol;
             }
 
             Console.WriteLine("  0 1 2 3 4 5 6 7");
-            for (int r = 0; r < 8; r++)
+            for (int a = 0; a < 8; a++)
             {
-                Console.Write(r);
+                Console.Write(a);
                 for (int c = 0; c < 8; c++)
                 {
-                    Console.Write(" {0}", grid[r][c]);
+                    Console.Write(" {0}", grid[a][c]);
                 }
                 Console.WriteLine();
             }
